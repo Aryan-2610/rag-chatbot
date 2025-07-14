@@ -1,0 +1,11 @@
+flask
+flask-cors
+openai
+langchain
+tiktoken
+sentence-transformers
+transformers
+torch
+numpy
+scikit-learn
+pandas
