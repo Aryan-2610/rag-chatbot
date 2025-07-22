@@ -83,16 +83,19 @@ from langchain.prompts import PromptTemplate
 
 from langchain.prompts import PromptTemplate
 
+
 prompt_template = PromptTemplate(
     input_variables=["context", "question"],
     template="""
 Answer the question using **only** the information given in the context.
 
 - Start with a natural, helpful tone — sound like you're speaking to a person.
+-respond to greeting or farewell messages poliely
 - Use bullet points if the answer has multiple parts or levels.
 - Be concise but don’t miss any detail available in the context.
 - **Avoid phrases like "the context says" or "the text mentions"** — just give the answer.
-- If the answer is not present in the context, respond politely with something like: "Sorry, I couldn’t find that information in the context."
+- If the answer is not present in the context, respond politely with something like: "Sorry, I couldn’t find that information in the context." but try your best to give some answer
+-if the context doesnt have much about the query but you know it that it is related to https://a2ascholarships.iccr.gov.in then give the answer as best as you can
 -if it asks like list all or something like give details give answer in points
 Context:
 {context}
@@ -102,7 +105,6 @@ Question:
 
 Answer:
 """)
-
 
 from langchain.document_loaders import TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
